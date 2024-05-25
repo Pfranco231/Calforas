@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://db52yeu2ftes5"]
+[gd_scene load_steps=3 format=3 uid="uid://db52yeu2ftes5"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_ghcw3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1r11f"]
+size = Vector3(1, 1.92468, 0.786377)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_ghcw3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95032, 0.311274, 0, -0.311274, 0.95032, 0, 1.33291, 2.76729)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0271606, -0.0418701)
+shape = SubResource("BoxShape3D_1r11f")
