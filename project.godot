@@ -11,5 +11,7 @@ config_version=5
 [application]
 
 config/name="Calforas"
+run/main_scene="res://mundo.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://materials/NirvanGames.png"
+config/icon="res://materials/icon.svg"
