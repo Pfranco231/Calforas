@@ -1,6 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://db52yeu2ftes5"]
+[gd_scene load_steps=8 format=3 uid="uid://db52yeu2ftes5"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_ghcw3"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_p77id"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_1smid"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_6vcng"]
+
+[sub_resource type="Resource" id="Resource_uf0lg"]
+script = ExtResource("3_1smid")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_bbap1"]
+script = ExtResource("4_6vcng")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+fov = 75.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1r11f"]
 size = Vector3(1, 1.92468, 0.786377)
@@ -9,7 +25,12 @@ size = Vector3(1, 1.92468, 0.786377)
 script = ExtResource("1_ghcw3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.95032, 0.311274, 0, -0.311274, 0.95032, 0, 1.33291, 2.76729)
+transform = Transform3D(1, 0, 0, 0, 0.998902, -0.0468444, 0, 0.0468444, 0.998902, 0, 0.600049, -0.221495)
+
+[node name="PhantomCamera3D" type="Node3D" parent="Camera3D"]
+script = ExtResource("2_p77id")
+tween_resource = SubResource("Resource_uf0lg")
+camera_3d_resource = SubResource("Resource_bbap1")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 

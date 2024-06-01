@@ -15,3 +15,11 @@ run/main_scene="res://mundo.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://materials/NirvanGames.png"
 config/icon="res://materials/icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
